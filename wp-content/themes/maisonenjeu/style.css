@@ -1,0 +1,99 @@
+body{background-color:#4A392F;font-size:10pt;font-family:arial;margin-right:23px;}
+body.mceContentBody{background-color:white;}
+p{margin:10pt 20pt;}
+ul,ol,li{padding:0;margin:0;}
+#page{width:765px;margin:0 5% 0 auto;}
+	
+#header{
+	background:transparent url('images/chat.jpg') no-repeat scroll 0 0;
+	height:295px;}
+#header h1{display:none;}
+#nav{width:11em;position:absolute;margin-left:-11em;margin-top:-150px;}
+	#nav li{list-style:none;text-align:right;margin:8px 0;}
+	#nav a{font: bold 1em Helvetica, Arial,"Luxi Sans", sans-serif; text-transform:uppercase;
+	text-decoration:none;color:white;background-color:#d54e43;padding:2px 15px 2px 0.5em;}
+	#nav  a:hover{background:#d54e43 url('images/des.png') center right no-repeat}
+	#nav .current_page_item a{background-color:#FEC502;color:#4a392f;}
+	#nav .current_page_item a:hover{background:#FEC502 url('images/des.png') center right no-repeat}
+	#nav .current_page_item{}
+#content{background-color:white;min-height:12em;}
+	#texte{float:left;width:74%;margin:1em 0 1em 1em;color:#4a392f;}
+        #texte ul{margin:1em 0;padding:0 3em}
+        #texte fieldset {border:none; margin:0; padding:0}
+        #texte form {margin:10pt 20pt;}
+		#texte h1{margin:10pt 20pt;}
+		#texte a{color:#d54e43;}
+		#texte a img{border:none}
+	#sidebar{background-color:FireBrick;
+	  color:white;float:right;text-align:center;
+	  width:20%;}
+	hr#end-content {clear:both;visibility:hidden;margin:0;}
+#footer{text-align:center;background-color:white;padding-bottom:3px;}
+	#footer ul{padding:0}
+	#footer li {display:inline;list-style:none;padding: 0 0.1em;}
+	#footer a {color:#4a392f;font-size:0.8em;font-weight:bold;text-decoration:none;
+	  border-right:2px solid #D54E43;padding-right:5px;}
+	#footer li:last-child a {border:none;padding:0}
+	
+	
+/* override pluginloader style */
+textarea.plugininputmax {
+  height:160px;
+}
+
+#cal .vevent{font-family:comic Sans MS;}
+html\:abbr span{
+  display:block;
+  font-size:18pt;
+  font-weight:bold;
+}
+#cal .dtstart span{
+  display:block;
+  font-size:18pt;
+  font-weight:bold;
+}
+#cal span.daynum{
+  font-size:45pt;
+  line-height:35pt;
+}
+#cal .content{font-size:7pt;}
+#cal #hcal {
+  background:green url("microformat_hcalendar.png") no-repeat;
+  text-indent:-5000px;
+  display:block;
+  width:15px;
+  float:right;
+}
+#cal a.location{
+  color:#FEC502;
+  font-family:Helvetica;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:14pt;
+}
+#cal a.location:hover{
+  text-decoration:underline;
+}
+
+ol.vcalendar{
+  list-style:disc;
+  padding:0 3em;
+}
+
+ol.vcalendar li{
+  margin: 0.5em 0;
+}
+
+ol.vcalendar .title{
+  display:none;
+}
+
+ol.vcalendar .content{
+  font-size:9pt;
+  font-style:italic;
+  padding-left:10pt;
+}
+ol.vcalendar .dtstart{
+  font-size:11pt;
+  font-weight:bold;
+}
