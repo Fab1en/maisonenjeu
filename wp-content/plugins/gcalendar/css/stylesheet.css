@@ -1,0 +1,61 @@
+/* override pluginloader style */
+textarea.plugininputmax {
+  height:160px;
+}
+
+#cal .vevent{font-family:comic Sans MS;}
+html\:abbr span{
+  display:block;
+  font-size:18pt;
+  font-weight:bold;
+}
+#cal .dtstart span{
+  display:block;
+  font-size:18pt;
+  font-weight:bold;
+}
+#cal span.daynum{
+  font-size:45pt;
+  line-height:35pt;
+}
+#cal .content{font-size:7pt;}
+#cal #hcal {
+  background:green url("microformat_hcalendar.png") no-repeat;
+  text-indent:-5000px;
+  display:block;
+  width:15px;
+  float:right;
+}
+#cal a.location{
+  color:#FEC502;
+  font-family:Helvetica;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:14pt;
+}
+#cal a.location:hover{
+  text-decoration:underline;
+}
+
+ol.vcalendar{
+  list-style:disc;
+  padding:0 3em;
+}
+
+ol.vcalendar li{
+  margin: 0.5em 0;
+}
+
+ol.vcalendar .title{
+  display:none;
+}
+
+ol.vcalendar .content{
+  font-size:9pt;
+  font-style:italic;
+  padding-left:10pt;
+}
+ol.vcalendar .dtstart{
+  font-size:11pt;
+  font-weight:bold;
+}
