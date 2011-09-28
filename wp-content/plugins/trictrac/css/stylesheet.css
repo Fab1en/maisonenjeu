@@ -1,0 +1,107 @@
+div.exampleplugin {
+  margin-top: 20px;
+  padding: 20px 20px 20px 20px;
+  background-color: steelblue;
+  color: white;
+}
+
+/* override pluginloader style */
+textarea.plugininputmax {
+  height:160px;
+}
+ol.ludo{
+  margin:0 auto;
+  width:480px;
+}
+ol.ludo li{
+  float:left;
+  text-align:center;
+  width:160px;
+  list-style:none;
+  height:130px;
+  overflow:hidden;
+   padding:5px 0;
+}
+
+ol.ludo span.nom{
+  display:block;
+  height:3ex;
+}
+
+ol.ludo img{
+  border:none;
+}
+
+ol.ludo a.usagé img{
+  /*border: solid 2px red*/
+}
+ol.ludo a.neuf img{
+ /* border: solid 2px green*/
+}
+ol.ludo a.bon img{
+  /*border: solid 2px orange*/
+}
+
+ol.ludo li div{
+  position:absolute;
+  text-indent:-5000px;
+}
+
+ol.ludo li div.incomplet{
+  background:transparent url(../images/attention.png) no-repeat scroll right top;
+  text-align:left;
+  font-size:8pt;
+  min-height:15px;
+  padding:3px 10px 3px 5px;
+  margin-left:135px;
+  margin-top:-121px;
+  width:0;
+}
+
+ol.ludo li div.incomplet:hover{
+  margin-left:53px;
+  margin-top:-123px;
+  padding-right:15px;
+  width:75px;
+  text-indent:0;
+  border:2px solid orange;
+  background-color:yellow;
+}
+
+.credits{
+  clear:both;
+  float:none;
+  text-align:right;
+}
+.credits a{
+  background:transparent url(../images/trictrac.png) no-repeat scroll right bottom;
+  display:inline-block;
+  padding:5px 57px;
+  text-align:left;
+  text-indent:-9999px;
+}
+
+.ficheJeu dl{
+  float:left;
+  font-family:Tahoma;
+  margin-left:30px;
+}
+.ficheJeu img{
+  float:right;
+}
+.ficheJeu dt{
+  color:FireBrick;
+  font-weight:bold;
+  text-transform:capitalize;
+  float:left;
+  clear:left;
+}
+.ficheJeu dd{
+  float:left;
+  margin-left:1em;
+}
+.ficheJeu a.back{
+  clear:both;
+  display:block;
+  float:none;
+}
