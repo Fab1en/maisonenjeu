@@ -35,9 +35,13 @@ ul,ol,li{padding:0;margin:0;}
         #texte ul{margin:1em 0;padding:0 3em}
         #texte fieldset {border:none; margin:0; padding:0}
         #texte form {margin:10pt 20pt;}
-		#texte h1{margin:10pt 20pt;}
+		#texte h2{margin:10pt 20pt; font-weight:bold; font-size: 2em}
 		#texte a{color:#d54e43;}
 		#texte a img{border:none}
+		#texte a.permalien{text-decoration: none; color: #4a392f;}
+		#texte .aligncenter{margin: 0 auto; text-align: center;}
+		#texte .article:after{content:''; display:block; width: 45px; height: 15px; background: url("images/des.png") repeat scroll 0 0 transparent; margin: 2em auto;}
+		
 	#sidebar{background-color:FireBrick;
 	  color:white;float:right;text-align:center;
 	  width:20%;}
