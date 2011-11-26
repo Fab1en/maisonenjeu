@@ -14,7 +14,7 @@
 		</div><!-- /#header -->
 		
 		<div id="nav">
-			<?php wp_page_menu() ?>
+			<?php wp_page_menu(array('show_home' => true)) ?>
 		</div><!-- /#nav -->
 		
 		<div id="content">
