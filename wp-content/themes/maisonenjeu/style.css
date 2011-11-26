@@ -8,7 +8,7 @@ ul,ol,li{padding:0;margin:0;}
 	background:transparent url('images/chat.jpg') no-repeat scroll 0 0;
 	height:295px;}
 #header h1{display:none;}
-#nav{width:11em;position:absolute;margin-left:-11em;margin-top:-150px;}
+#nav{width:14em;position:absolute;margin-left:-14em;margin-top:-150px;}
 	#nav li{list-style:none;text-align:right;margin:8px 0;}
 	#nav a{font: bold 1em Helvetica, Arial,"Luxi Sans", sans-serif; text-transform:uppercase;
 	text-decoration:none;color:white;background-color:#d54e43;padding:2px 15px 2px 0.5em;}
