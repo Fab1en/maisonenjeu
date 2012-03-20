@@ -8,7 +8,7 @@ ul,ol,li{padding:0;margin:0;}
 	background:transparent url('images/chat.jpg') no-repeat scroll 0 0;
 	height:295px;}
 #header h1{display:none;}
-#nav{width:14em;position:absolute;margin-left:-14em;margin-top:-150px;}
+#nav{width:15em;position:absolute;margin-left:-15em;margin-top:-150px;}
 	#nav li{list-style:none;text-align:right;margin:8px 0;}
 	#nav a{font: bold 1em Helvetica, Arial,"Luxi Sans", sans-serif; text-transform:uppercase;
 	text-decoration:none;color:white;background-color:#d54e43;padding:2px 15px 2px 0.5em;}
@@ -28,6 +28,41 @@ ul,ol,li{padding:0;margin:0;}
     margin: 0;
     padding: 2px 15px 2px 0.5em;
     text-transform: uppercase;
+}
+
+#nav .gauche {
+    background-color:#6b3f31;
+    color: white;
+    padding: 1px 10px;
+    border-radius: 20px 0 0 0;
+    margin-top: 50px;
+    min-height: 210px;
+}
+
+#nav .gauche p {
+    margin: 10pt 0;
+}
+
+#nav .gauche #s2email {
+    width: 100%;
+    font-size: small;
+}
+
+#nav .gauche input[type="submit"]{
+    background-color: #D54E43;
+    color: white;
+    font: bold 1em Helvetica,Arial,"Luxi Sans",sans-serif;
+    padding: 2px 15px 2px 0.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+#nav .gauche input[type="submit"]:hover{
+    background:#d54e43 url('images/des.png') center right no-repeat
 }
 	
 #content{background-color:white;min-height:12em;}

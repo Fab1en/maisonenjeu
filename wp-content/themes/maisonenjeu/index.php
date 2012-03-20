@@ -22,6 +22,8 @@
 			        <?php wp_list_categories(array('title_li' => '')); ?> 
 			    </ul>
 			</div>
+			
+			<?php dynamic_sidebar('gauche') ?>
 		</div><!-- /#nav -->
 		
 		<div id="content">
@@ -35,6 +37,7 @@
 			</div><!-- /#texte -->
 			<div id="sidebar">
 				<?php echo gCalendar_nextEvent() ?>
+				<?php dynamic_sidebar('ardoise') ?>
 			</div><!-- /#sidebar -->
 			<hr id="end-content" /> 
 		</div><!-- /#content -->
