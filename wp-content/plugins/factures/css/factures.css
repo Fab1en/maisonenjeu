@@ -1,0 +1,35 @@
+#factures_pdfgen .infos{
+    float: left;
+}
+
+#factures_pdfgen .infos label{
+    display: block;
+    font-size: large;
+    padding: 0.5em 2em 0;
+}
+
+#factures_pdfgen .infos input{
+    width: 20px;
+}
+
+#factures_pdfgen .pdf{
+    float: left;
+}
+
+#factures_pdfgen .ajax-button{
+    clear: both;
+}
+
+#factures_pdfgen .attachment-thumbnail{
+    vertical-align: middle;
+}
+
+#factures_pdfgen .inside:before,
+#factures_pdfgen .inside:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+#factures_pdfgen .inside:after {
+    clear: both;
+}
