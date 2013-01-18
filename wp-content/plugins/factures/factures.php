@@ -205,6 +205,12 @@ if ( is_admin() ) {
         
     }
     
+    add_action('wp_ajax_factures_getmetabox', 'factures_ajax_getmetabox');
+    function factures_ajax_getmetabox(){
+        factures_inner_pdfgen(get_post($_REQUEST['id']));
+        die();
+    }
+    
     add_action('admin_print_scripts-post.php', 'factures_add_script');
     function factures_add_script($page){
         wp_enqueue_script('factures', plugins_url( 'js/factures.js' , __FILE__ ));
@@ -322,13 +328,12 @@ if ( is_admin() ) {
                 'post_status' => 'inherit'
             ), $upload_dir['path'].'/'.$filename, $_GET['id']);
             
-            echo $attachment;
-            
         } catch(HTML2PDF_exception $e) {
             echo $e;
-            exit;
+            die();
         }
         
+        echo "ok";
         die();
     }
     
