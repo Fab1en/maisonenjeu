@@ -82,8 +82,18 @@ function factures_calc_num($post_ID, $post){
             $opt = get_option('factures');
             $metas['num'] = ++$opt['courant'];
             update_option('factures', $opt);
-            add_post_meta($post_ID, 'facture', $metas);
         }
+        
+        if(isset($_POST['factures_state'])) {
+            $state = $_POST['factures_state'];
+            $metas['state'] = array(
+                'sent' => (isset($state['sent']) && $state['sent'] == 'on'),
+                'payed' => (isset($state['payed']) && $state['payed'] == 'on'),
+                'inbank' => (isset($state['inbank']) && $state['inbank'] == 'on'),
+            );
+        }
+        
+        if($metas) update_post_meta($post_ID, 'facture', $metas);
     }
 }
 
@@ -192,9 +202,13 @@ if ( is_admin() ) {
                     <?php echo $pdf->post_title ?>
                 </a>
                 <div class="infos">
-                    <label><input type="checkbox"/>Envoyée</label>
-                    <label><input type="checkbox"/>Payée</label>
-                    <label><input type="checkbox"/>Encaissée</label>
+                    <?php 
+                        $metas = get_post_meta($post->ID, 'facture', true);
+                        $state = isset($metas['state']) ? $metas['state'] : array();
+                    ?>
+                    <label><input type="checkbox" name="factures_state[sent]" <?php if(isset($state['sent']) && $state['sent']) echo "checked"; ?>/>Envoyée</label>
+                    <label><input type="checkbox" name="factures_state[payed]" <?php if(isset($state['payed']) && $state['payed']) echo "checked"; ?>/>Payée</label>
+                    <label><input type="checkbox" name="factures_state[inbank]" <?php if(isset($state['inbank']) && $state['inbank']) echo "checked"; ?>/>Encaissée</label>
                 </div>
                 <div class="ajax-button">
                     <img src="<?php echo admin_url('images/wpspin_light.gif') ?>" class="ajax-loading" id="ajax-loading" alt="">
