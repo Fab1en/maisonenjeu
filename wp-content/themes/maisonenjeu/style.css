@@ -85,8 +85,11 @@ ul,ol,li{padding:0;margin:0;}
 		#texte a{color:#d54e43;}
 		#texte a img{border:none}
 		#texte a.permalien{text-decoration: none; color: #4a392f;}
-		#texte .aligncenter{margin: 0 auto; text-align: center;}
+		#texte .aligncenter{display: block; margin: 0 auto; text-align: center;}
 		#texte .article:after{content:''; display:block; width: 45px; height: 15px; background: url("images/des.png") repeat scroll 0 0 transparent; margin: 2em auto;}
+		#texte .alignleft{float:left;}
+		#texte .alignright{float:right;}
+		
 		
 	#sidebar{
 	    float:right;text-align:center;
