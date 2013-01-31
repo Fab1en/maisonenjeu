@@ -168,6 +168,12 @@ if ( is_admin() ) {
         );
     }
     function factures_inner_pdfgen($post){
+    
+        if($post->post_status != 'publish' && $post->post_status != 'future') {
+            ?>Il faut publier la facture avant de générer le PDF.<?php
+            return;
+        }
+    
         // Use nonce for verification
         wp_nonce_field( plugin_basename( __FILE__ ), 'factures_pdfgen_nonce' );
         
