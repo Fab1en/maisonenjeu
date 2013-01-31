@@ -7,8 +7,8 @@
 </head>
 <body>
 <h1 id="logo">
-	<a href="http://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" width="250" height="68" /></a> 
-	<br />Version 3.1
+	<a href="http://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" /></a> 
+	<br />Version 3.5
 
 </h1>
 <p style="text-align: center">Plateforme de publication sémantique personnelle</p>
@@ -25,7 +25,7 @@
 	<li>Envoyez le tout sur votre hébergement via un logiciel client FTP ;</li>
 	<li>Ouvrez le fichier <span class="file"><a href="wp-admin/install.php">/wp-admin/install.php</a></span> dans votre navigateur. Celui-ci vous guidera dans la création du fichier <code>wp-config.php</code>, qui contient les détails de connexion à votre base de données ;
 		<ol>
-			<li>Si cela ne marchait pas, ne vous inquietez pas : certains hébergeurs n'autorisent pas la création de fichier. Ouvrez le fichier <code>wp-config.php</code> avec un éditeur de texte, et saissez-y directement les détails de connexion à votre base de données ;</li>
+			<li>Si cela ne marchait pas, ne vous inquiétez pas : certains hébergeurs n'autorisent pas la création de fichier. Ouvrez le fichier <code>wp-config.php</code> avec un éditeur de texte, et sasissez-y directement les détails de connexion à votre base de données ;</li>
 			<li>Enregistrez le fichier sous le nom <code>wp-config.php</code> et mettez-le en ligne ;</li>
 			<li>Ouvrez le fichier  <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> dans votre navigateur ;</li>
 		</ol>
@@ -40,7 +40,7 @@
 <p>Si votre version de WordPress est égale ou supérieure à 2.7, vous pouvez utiliser l'outil de mise à jour automatique&nbsp;:</p>
 <ol>
 	<li>Ouvrez la page <span class="file"><a href="wp-admin/update-core.php">wp-admin/update-core.php</a></span> dans votre navigateur, et suivez les instructions&nbsp;;</li>
-	<li>Vous pensiez qu'il y aurai d'autres étapes ? C'est tout !</li>
+	<li>Vous pensiez qu'il y aurait d'autres étapes ? C'est tout !</li>
 </ol>
 
 <h2>Mise à jour manuelle (obligatoire pour les versions de WordPress inférieures à 2.7) :</h2>
@@ -57,10 +57,10 @@
 <h1>Migrer depuis d'autres logiciels/plates-formes</h1> 
 <p>WordPress peut <a href="http://codex.wordpress.org/Importing_Content">importer les articles en provenance de nombreux autres outils (en)</a>. Vous devez d'abord installer WordPress comme expliqué plus haut, puis utiliser <a href="wp-admin/import.php" title="Importer dans WordPress">un des importateurs</a>.</p>
 
-<h1>Pré-requis fonctionnels</h1> 
+<h1>Prérequis fonctionnels</h1> 
 <ul>
-	<li><a href="http://php.net/">PHP</a> version <strong>4.3</strong> ou plus ;</li>
-	<li><a href="http://www.mysql.com/">MySQL</a> version <strong>4.1.2</strong> ou plus.</li>
+	<li><a href="http://php.net/">PHP</a> version <strong>5.2.4</strong> ou plus ;</li>
+	<li><a href="http://www.mysql.com/">MySQL</a> version <strong>5.0</strong> ou plus.</li>
 </ul>
 
 <h1>Ressources en ligne</h1>
@@ -83,14 +83,14 @@
 
 <h1>Publier par messagerie</h1>
 <p>Il vous est possible d'écrire directement vos articles  à partir d'un logiciel de messagerie ! Pour cela, vous devez vous rendre sur la page d'options &quot;Ecriture&quot; et indiquer les détails de votre compte <abbr title="Post Office Protocol version 3">POP3</abbr> secret. Ensuite, vous devez faire en sorte que <code>wp-mail.php</code> s'exécute périodiquement, afin qu'il parcoure votre boite aux lettres à la recherche de nouveaux articles. Vous pouvez par exemple créer une tâche <a href="http://en.wikipedia.org/wiki/Cron">cron</a>, ou si votre hébergeur ne supporte pas cette possibilité, il existe de nombreux sites proposant un service similaire de monitoring : il vous suffira d'indiquer l'adresse de votre fichier <code>wp-mail.php</code></p>
-<p>Publier devient facile : n'importe quel message envoyé à l'adresse que vous aurez précisée sera publié, le sujet du message étant le titre de l'article. Il est préférable de conserver cette adresse à l'abri des regards indiscrets. Le script <em>effacera automatiquement</em> les message qui auront été publiés avec succès</p>
+<p>Publier devient facile : n'importe quel message envoyé à l'adresse que vous aurez précisée sera publié, le sujet du message étant le titre de l'article. Il est préférable de conserver cette adresse à l'abri des regards indiscrets. Le script <em>effacera automatiquement</em> les messages qui auront été publiés avec succès</p>
 
 <h1>Rôles d'utilisateurs</h1>
 <p>Nous avons mis en place un système de rôles très flexible dans la version 2.0. Référez-vous à la partie du codex expliquant <a href="http://codex.wordpress.org/Roles_and_Capabilities">les rôles et capacités des utilisateurs (en)</a>.</p>
 
 <h1>Pour finir</h1>
 <ul>
-	<li>Si vous avez des suggestions, des idées, des commentaires ou si (oups !) avez trouvé un bug, venez nous rejoindre sur les <a href="http://wordpress.org/support/">forums anglophones </a>.</li>
+	<li>Si vous avez des suggestions, des idées, des commentaires ou si (oups !) avez trouvé un bug, venez nous rejoindre sur les <a href="http://wordpress.org/support/">forums anglophones</a>.</li>
 	<li>WordPress possède une <abbr title="Application Programming Interface">API</abbr> d'extension robuste, qui permet d'étendre les possibilités de son code de manière simple. Si vous êtes un développeur intéressé par son utilisation, rendez-vous sur la <a href="http://codex.wordpress.org/Plugin_API">documentation des extensions sur le Codex</a>. Vous ne devriez pas avoir à modifier une partie du code original.</li>
 </ul>
 
