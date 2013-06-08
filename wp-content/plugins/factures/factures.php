@@ -131,6 +131,11 @@ if ( is_admin() ) {
 	        <input type="text" name="bar[siret]" id="siret" />
 	        <p>N° SIRET de l'établissement</p>
 	    </div>
+	    <div class="form-field">
+	        <label for="gerant">Adresse email</label>
+	        <input type="text" name="bar[email]" id="email" />
+	        <p>Adresse email du gérant (pour l'envoi de factures)</p>
+	    </div>
 	    <?php
 	}
 	
@@ -142,18 +147,23 @@ if ( is_admin() ) {
         ?>
         <tr class="form-field">
             <th scope="row" valign="top"><label for="gerant">Gérant</label></th>
-            <td><input type="text" name="bar[gerant]" id="gerant" value="<?php echo $metas['gerant'] ?>" />
+            <td><input type="text" name="bar[gerant]" id="gerant" value="<?php if(isset($metas['gerant'])) echo $metas['gerant'] ?>" />
             <p class="description">Nom du gérant</p></td>
         </tr>
         <tr class="form-field">
             <th scope="row" valign="top"><label for="adresse">Adresse</label></th>
-            <td><input type="text" name="bar[adresse]" id="adresse" value="<?php echo $metas['adresse'] ?>" />
+            <td><input type="text" name="bar[adresse]" id="adresse" value="<?php if(isset($metas['adresse'])) echo $metas['adresse'] ?>" />
             <p class="description">Adresse de l'établissement</p></td>
         </tr>
         <tr class="form-field">
-            <th scope="row" valign="top"><label for="adresse">Siret</label></th>
-            <td><input type="text" name="bar[siret]" id="siret" value="<?php echo $metas['siret'] ?>" />
+            <th scope="row" valign="top"><label for="siret">Siret</label></th>
+            <td><input type="text" name="bar[siret]" id="siret" value="<?php if(isset($metas['siret'])) echo $metas['siret'] ?>" />
             <p class="description">N° SIRET de l'établissement</p></td>
+        </tr>
+        <tr class="form-field">
+            <th scope="row" valign="top"><label for="email">Adresse email</label></th>
+            <td><input type="text" name="bar[email]" id="email" value="<?php if(isset($metas['email'])) echo $metas['email'] ?>" />
+            <p class="description">Adresse email du gérant (pour l'envoi de factures)</p></td>
         </tr>
 	    <?php
     }
