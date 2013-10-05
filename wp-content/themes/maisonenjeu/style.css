@@ -192,3 +192,62 @@ ol.vcalendar .dtstart{
   font-size:11pt;
   font-weight:bold;
 }
+
+ol.ludo{
+  margin:0 auto;
+  width:480px;
+}
+ol.ludo li{
+  float:left;
+  text-align:center;
+  width:160px;
+  list-style:none;
+  height:130px;
+  overflow:hidden;
+   padding:5px 0;
+}
+
+ol.ludo span.nom{
+  display:block;
+  height:3ex;
+}
+
+ol.ludo img{
+  border:none;
+}
+
+.credits{
+  clear:both;
+  float:none;
+  text-align:right;
+}
+
+.ficheJeu p{
+    text-align: justify;
+    clear: both;
+}
+.ficheJeu dl{
+  float:left;
+  font-family:Tahoma;
+  margin-left:30px;
+}
+.ficheJeu img{
+  float:right;
+  margin: 1em 0;
+}
+.ficheJeu dt{
+  color:FireBrick;
+  font-weight:bold;
+  text-transform:capitalize;
+  float:left;
+  clear:left;
+}
+.ficheJeu dd{
+  float:left;
+  margin-left:1em;
+}
+.ficheJeu a.back{
+  clear:both;
+  display:block;
+  float:none;
+}
