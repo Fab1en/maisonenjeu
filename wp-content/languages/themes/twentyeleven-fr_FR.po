@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Twenty Eleven package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Twenty Eleven 1.5 (WordPress 3.5)\n"
+"Project-Id-Version: Twenty Eleven 1.5 (WordPress 3.6)\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/twentyeleven\n"
-"POT-Creation-Date: 2013-01-01 00:19:31+00:00\n"
-"PO-Revision-Date: 2013-01-24 23:33+0100\n"
+"POT-Creation-Date: 2013-06-18 22:14:12+00:00\n"
+"PO-Revision-Date: 2013-07-24 22:46+0100\n"
 "Last-Translator: WordPress Francophone <traduction_at_wordpress-fr.net>\n"
 "Language-Team: WordPress-Francophone <traduction@wordpress-fr.net>\n"
 "Language: fr_FR\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: 404.php:17
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"
@@ -119,13 +119,6 @@ msgstr "Commentaires plus récents &rarr;"
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
-#: content-aside.php:16 content-featured.php:14 content-gallery.php:16
-#: content-gallery.php:48 content-image.php:15 content-link.php:16
-#: content-quote.php:14 content-status.php:15 content.php:15 content.php:19
-#: inc/widgets.php:89 showcase.php:120 showcase.php:199
-msgid "Permalink to %s"
-msgstr "Permalien vers %s"
-
 #: content-aside.php:17
 msgid "Aside"
 msgstr "En passant"
@@ -153,42 +146,42 @@ msgstr "%"
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Lire la suite <span class=\"meta-nav\">&rarr;</span>"
 
-#: content-aside.php:34 content-featured.php:23 content-gallery.php:54
+#: content-aside.php:34 content-featured.php:23 content-gallery.php:50
 #: content-image.php:28 content-intro.php:18 content-link.php:34
 #: content-page.php:18 content-quote.php:36 content-single.php:24
 #: content-status.php:35 content.php:42 image.php:90
 msgid "Pages:"
 msgstr "Pages&nbsp;:"
 
-#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-aside.php:42 content-gallery.php:83 content-image.php:64
 #: content-link.php:42 content-quote.php:69 content-status.php:43
 #: content.php:79 showcase.php:201
 msgid "Leave a reply"
 msgstr "Laisser une réponse"
 
-#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-aside.php:42 content-gallery.php:83 content-image.php:64
 #: content-link.php:42 content-quote.php:69 content-status.php:43
 #: content.php:79 showcase.php:201
 msgid "<b>1</b> Reply"
 msgstr "<b>Une</b> réponse"
 
-#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-aside.php:42 content-gallery.php:83 content-image.php:64
 #: content-link.php:42 content-quote.php:69 content-status.php:43
 #: content.php:79 showcase.php:201
 msgid "<b>%</b> Replies"
 msgstr "<b>%</b> Réponses"
 
-#: content-aside.php:44 content-featured.php:45 content-gallery.php:90
+#: content-aside.php:44 content-featured.php:45 content-gallery.php:86
 #: content-image.php:68 content-intro.php:19 content-link.php:44
 #: content-page.php:21 content-quote.php:72 content-single.php:52
-#: content-status.php:45 content.php:82 functions.php:525 functions.php:553
+#: content-status.php:45 content.php:82 functions.php:543 functions.php:571
 #: image.php:41
 msgid "Edit"
 msgstr "Modifier"
 
 #. translators: used between list items, there is a space after the comma
-#: content-featured.php:29 content-featured.php:38 content-gallery.php:62
-#: content-gallery.php:72 content-image.php:47 content-image.php:56
+#: content-featured.php:29 content-featured.php:38 content-gallery.php:58
+#: content-gallery.php:68 content-image.php:47 content-image.php:56
 #: content-quote.php:44 content-quote.php:54 content-single.php:30
 #: content-single.php:33 content.php:51 content.php:63
 msgid ", "
@@ -215,21 +208,25 @@ msgstr ""
 msgid "Gallery"
 msgstr "Galerie"
 
-#: content-gallery.php:47
+#: content-gallery.php:43
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
 msgstr[0] "Cette galerie contient <a %1$s>%2$s photo</a>."
 msgstr[1] "Cette galerie contient <a %1$s>%2$s photos</a>."
 
-#: content-gallery.php:66 content-image.php:51 content-quote.php:48
+#: content-gallery.php:44 showcase.php:120
+msgid "Permalink to %s"
+msgstr "Permalien vers %s"
+
+#: content-gallery.php:62 content-image.php:51 content-quote.php:48
 #: content.php:55
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
 msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
 
-#: content-gallery.php:78 content-image.php:59 content-quote.php:60
+#: content-gallery.php:74 content-image.php:59 content-quote.php:60
 #: content.php:69
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Mots-clefs&nbsp;:</span> %2$s"
+msgstr "<span class=\"%1$s\">Mots-clés&nbsp;:</span> %2$s"
 
 #: content-image.php:16
 msgid "Image"
@@ -247,7 +244,7 @@ msgstr ""
 "span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title="
 "\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: content-image.php:39 functions.php:590
+#: content-image.php:39 functions.php:608
 msgid "View all posts by %s"
 msgstr "Afficher tous les articles par %s"
 
@@ -398,29 +395,29 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
 
-#: functions.php:525
+#: functions.php:543
 msgid "Pingback:"
 msgstr "Ping&nbsp;:"
 
 #. translators: 1: comment author, 2: date and time
-#: functions.php:542
+#: functions.php:560
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "Le %2$s, %1$s <span class=\"says\">a dit&nbsp;:</span>"
 
 #. translators: 1: date, 2: time
-#: functions.php:548
+#: functions.php:566
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: functions.php:557
+#: functions.php:575
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de validation."
 
-#: functions.php:566
+#: functions.php:584
 msgid "Reply <span>&darr;</span>"
 msgstr "Répondre <span>&darr;</span>"
 
-#: functions.php:584
+#: functions.php:602
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
 "\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
@@ -617,27 +614,23 @@ msgstr "Contenu éphémère de Twenty Ten"
 msgid "Ephemera"
 msgstr "Éphémère"
 
-#: inc/widgets.php:91 inc/widgets.php:107
+#: inc/widgets.php:91 inc/widgets.php:100
 msgid "0 <span class=\"reply\">comments &rarr;</span>"
 msgstr "Aucun <span class=\"reply\">commentaire &rarr;</span>"
 
-#: inc/widgets.php:91 inc/widgets.php:107
+#: inc/widgets.php:91 inc/widgets.php:100
 msgid "1 <span class=\"reply\">comment &rarr;</span>"
 msgstr "Un <span class=\"reply\">commentaire &rarr;</span>"
 
-#: inc/widgets.php:91 inc/widgets.php:107
+#: inc/widgets.php:91 inc/widgets.php:100
 msgid "% <span class=\"reply\">comments &rarr;</span>"
 msgstr "% <span class=\"reply\">commentaires &rarr;</span>"
 
-#: inc/widgets.php:105
-msgid "Link to %s"
-msgstr "Lien vers %s"
-
-#: inc/widgets.php:157
+#: inc/widgets.php:150
 msgid "Title:"
 msgstr "Titre&nbsp;:"
 
-#: inc/widgets.php:160
+#: inc/widgets.php:153
 msgid "Number of posts to show:"
 msgstr "Nombre d&rsquo;articles à afficher&nbsp;:"
 
@@ -651,7 +644,7 @@ msgid ""
 "different keywords."
 msgstr ""
 "Désolé, mais rien ne correspond à votre critères de recherche. Veuillez "
-"réessayer avec d&rsquo;autres mots-clefs."
+"réessayer avec d&rsquo;autres mots-clés."
 
 #: searchform.php:11 searchform.php:12 searchform.php:13
 msgid "Search"
@@ -687,15 +680,15 @@ msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
 
 #: tag.php:19
 msgid "Tag Archives: %s"
-msgstr "Archives du mot-clef %s"
+msgstr "Archives du mot-clé %s"
 
 #. Theme Name of the plugin/theme
 msgid "Twenty Eleven"
 msgstr "Twenty Eleven"
 
 #. Theme URI of the plugin/theme
-msgid "http://wordpress.org/extend/themes/twentyeleven"
-msgstr "http://wordpress.org/extend/themes/twentyeleven"
+msgid "http://wordpress.org/themes/twentyeleven"
+msgstr "http://wordpress.org/themes/twentyeleven"
 
 #. Description of the plugin/theme
 msgid ""
@@ -738,6 +731,9 @@ msgstr "Modèle de vitrine"
 #. Template Name of the plugin/theme
 msgid "Sidebar Template"
 msgstr "Modèle de colonne latérale"
+
+#~ msgid "Link to %s"
+#~ msgstr "Lien vers %s"
 
 #~ msgid ""
 #~ "dark, light, white, black, gray, one-column, two-columns, left-sidebar, "
