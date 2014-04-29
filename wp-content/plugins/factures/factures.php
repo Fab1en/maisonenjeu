@@ -292,8 +292,9 @@ if ( is_admin() ) {
                 </div>
                 <div class="emmeteur vcard">
                     <img src="http://maisonenjeu.asso.fr/wordpress/wp-content/themes/maisonenjeu/images/maisonenjeu.png" alt="Maison en Jeu"/>
-                    <p>Association loi 1901 n&deg;0723011413</p>
-                    <p>D&eacute;claration au JO du 24 avril 2004</p>
+                    <p>Association loi 1901 n&deg;W723004817</p>
+                    <p>SIRET : 798 152 716 00014</p>
+                    <p>D&eacute;claration au JO du 4 mai 2013</p>
                 </div>
                 
                 <div class="spacer"></div>
@@ -317,15 +318,9 @@ if ( is_admin() ) {
                 <div class="vcard">
                     <div><a class="org" href="http://maisonenjeu.asso.fr/">Maison en Jeu</a></div>
                     <div class="adr">
-                        <span class="type">Adresse postale : </span>
-                        <span class="street-address">54, rue des Fontenelles</span>
-                        <span class="postal-code">72000</span>
-                        <span class="locality">Le Mans</span>
-                    </div>
-                    <div class="adr">
                         <span class="type">Si&egrave;ge social : </span>
-                        <span class="street-address">39, rue de Sarg&eacute;</span>
-                        <span class="postal-code">72000</span>
+                        <span class="street-address">5 impasse Jean Duclos</span>
+                        <span class="postal-code">72100</span>
                         <span class="locality">Le Mans</span>
                     </div>
                     <div class="tel">
