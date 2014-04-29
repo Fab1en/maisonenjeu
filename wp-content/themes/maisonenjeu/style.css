@@ -200,9 +200,9 @@ ol.ludo{
 ol.ludo li{
   float:left;
   text-align:center;
-  width:160px;
+  width:120px;
   list-style:none;
-  height:130px;
+  height:120px;
   overflow:hidden;
    padding:5px 0;
 }
