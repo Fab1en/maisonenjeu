@@ -362,6 +362,31 @@ if ( is_admin() ) {
         die();
     }
     
+    add_filter( 'manage_facture_posts_columns', 'factures_add_infos_cols' );
+    function factures_add_infos_cols($cols){
+        $author = $cols['author'];
+        unset($cols['author']);
+        $date = $cols['date'];
+        unset($cols['date']);
+        
+        $cols['sent'] = 'Envoyée';
+        $cols['payed'] = 'Payée';
+        $cols['inbank'] = 'Encaissée';
+        $cols['author'] = 'Responsable';
+        $cols['date'] = 'Date';
+        return $cols;
+    }
+    
+    add_action( 'manage_facture_posts_custom_column', 'factures_fill_infos_cols', 10, 2 );
+    function factures_fill_infos_cols($column_name, $post_id){
+        $metas = get_post_meta($post_id, 'facture', true);
+        $state = isset($metas['state']) ? $metas['state'] : array();
+        
+        if(in_array($column_name, array('sent', 'payed', 'inbank'))){
+            echo isset($state[$column_name]) ? $state[$column_name] : 0;
+        }
+    }
+    
 } // endif is_admin
 
 ?>
