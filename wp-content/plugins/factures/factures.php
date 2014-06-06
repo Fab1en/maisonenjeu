@@ -15,6 +15,19 @@ function factures_install() {
 	add_option('factures', array(
 	    'courant' => 0
 	));
+	
+	// ajoute les capacités nécesaires pour les admins
+	$role = get_role( 'administrator' );
+	foreach(array('read_%', 'edit_%', 'delete_%', 
+	            'edit_%s', 'edit_others_%s', 'publish_%s', 
+	            'delete_%s', 'delete_published_%s', 'delete_others_%s', 'edit_published_%s') as $cap){
+	    $role->add_cap( str_replace( '%','facture', $cap ) ); 
+	}
+	
+	foreach(array('manage_%s', 'edit_%s', 'delete_%s', 'assign_%s') as $cap){
+	    $role->add_cap( str_replace( '%','bar', $cap ) ); 
+	
+	} 
 }
 
 
@@ -46,6 +59,12 @@ function factures_create_objects() {
             'menu_name' => 'Bars'
 		),
 		'hierarchical' => true,
+		'capabilities' => array(
+		    'manage_terms'  => 'manage_bars',
+		    'edit_terms'    => 'edit_bars',
+		    'delete_terms'  => 'delete_bars',
+		    'assign_terms'  => 'assign_bars',
+		),
 	));
 	
 	register_post_type( 'facture',
@@ -70,6 +89,7 @@ function factures_create_objects() {
 		'menu_icon' => plugins_url( 'images/facture.png', __FILE__ ),
 		'supports' => array('title', 'author'),
 		'taxonomies' => array('bar'),
+		'capability_type' => 'facture',
 		)
 	);
 }
