@@ -12,7 +12,7 @@ Text Domain: gCalendar
 // gCalendar options
 if ( is_admin() ){
     // plugin options
-    add_option('gCalendar',array('account'=>'', ));
+    add_option('gCalendar',array('account'=>'', 'key' => ''));
 
     // admin panel
     add_action('admin_menu', 'gCalendar_menu');
@@ -51,9 +51,14 @@ function register_gCalendarsettings() {
     function gCalendar_settings_section(){}
     
     add_settings_field('gCalendar_account', _x('Entrer l\'identifiant du compte google', 'gCalendar','gCalendar'), 'gCalendar_settings_field1', 'gCalendar', 'gCalendar_main');
+    add_settings_field('gCalendar_key', _x('Entrer la clé API', 'gCalendar','gCalendar'), 'gCalendar_settings_field2', 'gCalendar', 'gCalendar_main');
     function gCalendar_settings_field1(){
         $options = get_option('gCalendar');
         echo "<input id='gCalendar_account' name='gCalendar[account]' size='90' type='text' value='{$options['account']}' />";
+    }
+    function gCalendar_settings_field2(){
+        $options = get_option('gCalendar');
+        echo "<input id='gCalendar_key' name='gCalendar[key]' size='90' type='text' value='{$options['key']}' />";
     }
 }
 
@@ -62,11 +67,13 @@ function register_gCalendarsettings() {
  */
 function gCalendar_getFeed(){
   $options = get_option('gCalendar');
-  $calendarURL = 'http://www.google.com/calendar/feeds/'.$options['account'].'/public/full';
-  $calendarURL .= '?futureevents=true';
-  $calendarURL .= '&orderby=starttime';
-  $calendarURL .= '&sortorder=ascend';
-  $calendarURL .= '&alt=json';
+
+  $calendarURL = 'https://www.googleapis.com/calendar/v3/calendars/';
+  $calendarURL .= $options['account'] . '/events';
+  $calendarURL .= '?key=' . $options['key'];
+  $calendarURL .= '&timeMin=' . substr(date('c'), 0, -6) . '.' . date('Z') . 'Z';
+  $calendarURL .= '&orderBy=startTime';
+  $calendarURL .= '&singleEvents=true';
 
   /* Check if json functionality is present (require PHP >= 5.2.0) */
   if (! function_exists("json_decode")) return 0;
@@ -110,18 +117,18 @@ function gCalendar_nextEvent()
   
   $feed=gCalendar_getFeed();
   if ($feed==0) return "";
-  $event=$feed['feed']['entry'][0];
+  $event=$feed['items'][0];
   $data=array();
   
-  $startTime=date_format(date_create($event['gd$when'][0]['startTime']),'U');
-  $data['time_iso']=$event['gd$when'][0]['startTime'];
+  $startTime=date_format(date_create($event['start']['dateTime']),'U');
+  $data['time_iso']=$event['start']['dateTime'];
   $data['weekday']=utf8_decode(strftime('%A',$startTime));
   $data['daynum']=strftime('%e',$startTime);
-  $data['month']=utf8_decode(strftime('%B',$startTime));
+  $data['month']=strftime('%B',$startTime);
   $data['time']=strftime('%Hh%M',$startTime);
-  $data['location']=utf8_decode($event['gd$where'][0]['valueString']);
-  $data['title']=$event['title']['$t'];
-  $data['content']=$event['content']['$t'];
+  $data['location']=utf8_decode($event['location']);
+  $data['title']=$event['summary'];
+  $data['content']= isset($event['description']) ? $event['description'] : '';
 
   $o.="<div id=\"cal\" class=\"vcalendar\">";
   $o.=gCalendar_formatEventHTML($data);
@@ -139,17 +146,17 @@ function gCalendar_eventList(){
   
   $feed=gCalendar_getFeed();
   $o.="<ol class=\"vcalendar\">";
-  foreach ($feed['feed']['entry'] as $event){
+  foreach ($feed['items'] as $event){
 	$data=array();
-	$startTime=date_format(date_create($event['gd$when'][0]['startTime']),'U');
-	$data['time_iso']=$event['gd$when'][0]['startTime'];
+	$startTime=date_format(date_create($event['start']['dateTime']),'U');
+	$data['time_iso']=$event['start']['dateTime'];
 	$data['weekday']=utf8_decode(strftime('%A',$startTime));
 	$data['daynum']=strftime('%e',$startTime);
-	$data['month']=utf8_decode(strftime('%B',$startTime));
+	$data['month']=strftime('%B',$startTime);
 	$data['time']=strftime('%Hh%M',$startTime);
-	$data['location']=utf8_decode($event['gd$where'][0]['valueString']);
-	$data['title']=$event['title']['$t'];
-	$data['content']=$event['content']['$t'];
+	$data['location']=utf8_decode($event['location']);
+	$data['title']=$event['summary'];
+	$data['content']= isset($event['description']) ? $event['description'] : '';
 	
 	$o.="<li>";
 	$o.=gCalendar_formatEventHTML($data);
