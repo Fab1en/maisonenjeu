@@ -15,6 +15,19 @@ function factures_install() {
 	add_option('factures', array(
 	    'courant' => 0
 	));
+	
+	// ajoute les capacités nécesaires pour les admins
+	$role = get_role( 'administrator' );
+	foreach(array('read_%', 'edit_%', 'delete_%', 
+	            'edit_%s', 'edit_others_%s', 'publish_%s', 
+	            'delete_%s', 'delete_published_%s', 'delete_others_%s', 'edit_published_%s') as $cap){
+	    $role->add_cap( str_replace( '%','facture', $cap ) ); 
+	}
+	
+	foreach(array('manage_%s', 'edit_%s', 'delete_%s', 'assign_%s') as $cap){
+	    $role->add_cap( str_replace( '%','bar', $cap ) ); 
+	
+	} 
 }
 
 
@@ -46,6 +59,12 @@ function factures_create_objects() {
             'menu_name' => 'Bars'
 		),
 		'hierarchical' => true,
+		'capabilities' => array(
+		    'manage_terms'  => 'manage_bars',
+		    'edit_terms'    => 'edit_bars',
+		    'delete_terms'  => 'delete_bars',
+		    'assign_terms'  => 'assign_bars',
+		),
 	));
 	
 	register_post_type( 'facture',
@@ -70,6 +89,7 @@ function factures_create_objects() {
 		'menu_icon' => plugins_url( 'images/facture.png', __FILE__ ),
 		'supports' => array('title', 'author'),
 		'taxonomies' => array('bar'),
+		'capability_type' => 'facture',
 		)
 	);
 }
@@ -292,8 +312,9 @@ if ( is_admin() ) {
                 </div>
                 <div class="emmeteur vcard">
                     <img src="http://maisonenjeu.asso.fr/wordpress/wp-content/themes/maisonenjeu/images/maisonenjeu.png" alt="Maison en Jeu"/>
-                    <p>Association loi 1901 n&deg;0723011413</p>
-                    <p>D&eacute;claration au JO du 24 avril 2004</p>
+                    <p>Association loi 1901 n&deg;W723004817</p>
+                    <p>SIRET : 798 152 716 00014</p>
+                    <p>D&eacute;claration au JO du 4 mai 2013</p>
                 </div>
                 
                 <div class="spacer"></div>
@@ -317,15 +338,9 @@ if ( is_admin() ) {
                 <div class="vcard">
                     <div><a class="org" href="http://maisonenjeu.asso.fr/">Maison en Jeu</a></div>
                     <div class="adr">
-                        <span class="type">Adresse postale : </span>
-                        <span class="street-address">54, rue des Fontenelles</span>
-                        <span class="postal-code">72000</span>
-                        <span class="locality">Le Mans</span>
-                    </div>
-                    <div class="adr">
                         <span class="type">Si&egrave;ge social : </span>
-                        <span class="street-address">39, rue de Sarg&eacute;</span>
-                        <span class="postal-code">72000</span>
+                        <span class="street-address">5 impasse Jean Duclos</span>
+                        <span class="postal-code">72100</span>
                         <span class="locality">Le Mans</span>
                     </div>
                     <div class="tel">
@@ -365,6 +380,31 @@ if ( is_admin() ) {
         
         echo "ok";
         die();
+    }
+    
+    add_filter( 'manage_facture_posts_columns', 'factures_add_infos_cols' );
+    function factures_add_infos_cols($cols){
+        $author = $cols['author'];
+        unset($cols['author']);
+        $date = $cols['date'];
+        unset($cols['date']);
+        
+        $cols['sent'] = 'Envoyée';
+        $cols['payed'] = 'Payée';
+        $cols['inbank'] = 'Encaissée';
+        $cols['author'] = 'Responsable';
+        $cols['date'] = 'Date';
+        return $cols;
+    }
+    
+    add_action( 'manage_facture_posts_custom_column', 'factures_fill_infos_cols', 10, 2 );
+    function factures_fill_infos_cols($column_name, $post_id){
+        $metas = get_post_meta($post_id, 'facture', true);
+        $state = isset($metas['state']) ? $metas['state'] : array();
+        
+        if(in_array($column_name, array('sent', 'payed', 'inbank'))){
+            echo isset($state[$column_name]) ? $state[$column_name] : 0;
+        }
     }
     
 } // endif is_admin
