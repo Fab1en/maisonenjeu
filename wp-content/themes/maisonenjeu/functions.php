@@ -32,4 +32,16 @@ function maisonenjeu_sidebars(){
         'after_widget' => '</div>'
     ));
 }
+
+add_action('init', 'maisonenjeu_page_category');
+function maisonenjeu_page_category(){
+	register_taxonomy( 'page_tag', 'page', array(
+			'labels'            => array(
+				'name'			=> __('Tags'),
+				'singular_name' => __('Tag'),
+			),
+			'rewrite'           => array( 'slug' => 'c' ),
+		)
+	);
+}
 ?>

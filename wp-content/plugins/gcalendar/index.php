@@ -166,6 +166,43 @@ function gCalendar_eventList(){
   return $o;
 }
 
+function gCalendar_nextEventTime() {
+	setlocale (LC_TIME, 'fr_FR.utf8');
+	$feed=gCalendar_getFeed();
+	if ($feed==0) return "";
+	$event=$feed['items'][0];
+	$data=array();
+
+	return date_create($event['start']['dateTime']);
+}
+
 add_shortcode('gcalendar', 'gCalendar_eventList');
+
+/**
+* Display the calendar in a feed where the page is present
+*/
+add_filter('the_excerpt_rss', 'maisonenjeu_display_feed');
+function maisonenjeu_display_feed($content) {
+	$post = get_post();
+	if ( !empty( $post ) && has_shortcode($post->post_content, 'gcalendar') ) {
+
+		// display the shortcode in feed
+		global $more;
+		$more = 0;
+		$content = apply_filters('the_content', get_the_content());
+
+		$next = gCalendar_nextEventTime();
+		$next->sub(new DateInterval('P2D')); // two days before
+		// if we are 2 days before the next event
+		if( new DateTime() >= $next && $post->post_date != $next->format('Y-m-d H:i:s') ) {
+			// update post date to this date to trigger the RSS parser
+			$post->post_date = $next->format('Y-m-d H:i:s');
+			$next->setTimezone(new DateTimeZone('UTC'));
+			$post->post_date_gmt = $next->format('Y-m-d H:i:s');
+			wp_update_post($post);
+		}
+	}
+	return $content;
+}
 
 ?>
