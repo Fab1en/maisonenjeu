@@ -93,13 +93,13 @@ function gCalendar_getFeed(){
 function gCalendar_formatEventHTML($event=array()){
   $o = '<div class="vevent">
     <div class="summary">
-      <span class="title">'.$event['title'].'</span>
-      <abbr class="dtstart" title="'.$event['time_iso'].'">
-        <span class="weekday">'.$event['weekday'].'</span> 
-        <span class="daynum">'.$event['daynum'].'</span> 
-        <span class="month">'.$event['month'].'</span>
-      </abbr>
-      <a class="location" href="http://maps.google.fr/maps?hl=fr&q='.utf8_encode($event['location']).'+Le+Mans">'.utf8_encode($event['location']).'</a>
+      <span class="title">'.$event['title'].'</span> <!--
+      --><abbr class="dtstart" title="'.$event['time_iso'].'"> <!--
+        --><span class="weekday">'.$event['weekday'].'</span> <!--
+        --><span class="daynum">'.$event['daynum'].'</span> <!--
+        --><span class="month">'.$event['month'].'</span><!--
+      --></abbr> <!--
+      --><a class="location" href="http://maps.google.fr/maps?hl=fr&q='.utf8_encode($event['location']).'+Le+Mans">'.utf8_encode($event['location']).'</a>
     </div>
     <div class="content">'.$event['content'].'</div>
   </div>';
@@ -189,7 +189,7 @@ function maisonenjeu_display_feed($content) {
 		// display the shortcode in feed
 		global $more;
 		$more = 0;
-		$content = apply_filters('the_content', get_the_content());
+		$content = apply_filters('the_content', get_the_content('', true));
 
 		$next = gCalendar_nextEventTime();
 		$next->sub(new DateInterval('P2D')); // two days before
