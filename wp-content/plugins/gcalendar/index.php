@@ -86,6 +86,32 @@ function gCalendar_getFeed(){
   }
 }
 
+function gCalendar_getLocation($location){
+	$bar_tag = get_terms('post_tag', array(
+		'name__like' => $location,
+		'fields' => 'id=>slug',
+	));
+	if( sizeof($bar_tag) ){
+		$bar = new WP_Query( array(
+			'post_type' => 'post',
+			'tax_query' => array(
+				'relation' => 'AND',
+				array('taxonomy' => 'category', 'field' => 'slug', 'terms' => 'bars'),
+				array('taxonomy' => 'post_tag', 'field' => 'slug', 'terms' => array_pop($bar_tag))
+			)
+		) );
+		if( $bar->have_posts() ){
+			$link = get_permalink($bar->posts[0]);
+		}
+	}
+
+	if( isset($link) ) {
+		return '<a class="location" href="' . $link . '">' . $location . '</a>';
+	} else {
+		return $location;
+	}
+}
+
 /**
  * Returns formatted HTML containing the event data.
  * HTML template is taken from configuration file.
@@ -98,8 +124,7 @@ function gCalendar_formatEventHTML($event=array()){
         --><span class="weekday">'.$event['weekday'].'</span> <!--
         --><span class="daynum">'.$event['daynum'].'</span> <!--
         --><span class="month">'.$event['month'].'</span><!--
-      --></abbr> <!--
-      --><a class="location" href="http://maps.google.fr/maps?hl=fr&q='.utf8_encode($event['location']).'+Le+Mans">'.utf8_encode($event['location']).'</a>
+      --></abbr> ' . gCalendar_getLocation(utf8_encode($event['location'])) . '
     </div>
     <div class="content">'.$event['content'].'</div>
   </div>';
