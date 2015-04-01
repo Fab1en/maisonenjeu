@@ -233,11 +233,12 @@ ol.ludo img{
 .ficheJeu img{
   float:right;
   margin: 1em 0;
+  max-width: 280px;
+  height: auto;
 }
 .ficheJeu dt{
   color:FireBrick;
   font-weight:bold;
-  text-transform:capitalize;
   float:left;
   clear:left;
 }
