@@ -13,13 +13,25 @@ body{background-color:#4A392F;font-size:10pt;font-family:arial;margin-right:23px
 body.mceContentBody{background-color:white;}
 p{margin:10pt 20pt;}
 ul,ol,li{padding:0;margin:0;}
-#page{width:765px;margin:0 auto;}
+#page{
+	width:965px;
+/* 	width:765px; */
+	margin:0 auto;
+}
 	
 #header{
 	background:transparent url('images/chat.jpg') no-repeat scroll 0 0;
-	height:295px;}
+	height:295px;
+	margin-left: 200px;
+}
 #header h1{display:none;}
-#nav{width:15em;position:absolute;margin-left:-15em;margin-top:-150px;}
+#nav{
+	width: 200px;
+/* 	position:absolute; */
+/* 	margin-left:-15em; */
+	margin-top:-150px;
+	float: left;
+}
 	#nav li{list-style:none;text-align:right;margin:8px 0;}
 	#nav a{font: bold 1em Helvetica, Arial,"Luxi Sans", sans-serif; text-transform:uppercase;
 	text-decoration:none;color:white;background-color:#d54e43;padding:2px 15px 2px 0.5em;}
@@ -75,7 +87,12 @@ ul,ol,li{padding:0;margin:0;}
     background:#d54e43 url('images/des.png') center right no-repeat
 }
 	
-#content{background-color:white;min-height:12em;}
+#content{
+	background-color:white;
+	min-height:12em;
+	width: 765px;
+	margin-left: 200px;
+}
 	#texte{float:left;width:74%;margin:1em 0 1em 1em;color:#4a392f;}
         #texte ul{margin:1em 0;padding:0 3em}
         #texte fieldset {border:none; margin:0; padding:0}
@@ -122,7 +139,14 @@ ul,ol,li{padding:0;margin:0;}
 	hr#end-content {
 	    clear:both;visibility:hidden;margin:0;
 	}
-#footer{text-align:center;background-color:white;padding-bottom:3px;}
+#footer{
+	text-align:center;
+	background-color:white;
+	padding-bottom:3px;
+	
+	width: 765px;
+	margin-left: 200px;
+}
 	#footer ul{padding:0}
 	#footer li {display:inline;list-style:none;padding: 0 0.1em;}
 	#footer a {color:#4a392f;font-size:0.8em;font-weight:bold;text-decoration:none;
