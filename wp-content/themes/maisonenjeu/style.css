@@ -15,7 +15,6 @@ p{margin:10pt 20pt;}
 ul,ol,li{padding:0;margin:0;}
 #page{
 	width:965px;
-/* 	width:765px; */
 	margin:0 auto;
 }
 	
@@ -27,8 +26,6 @@ ul,ol,li{padding:0;margin:0;}
 #header h1{display:none;}
 #nav{
 	width: 200px;
-/* 	position:absolute; */
-/* 	margin-left:-15em; */
 	margin-top:-150px;
 	float: left;
 }

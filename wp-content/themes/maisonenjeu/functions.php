@@ -13,7 +13,7 @@ function maisonenjeu_head(){
 add_action('wp_enqueue_scripts', 'maisonenjeu_print_assets');
 function maisonenjeu_print_assets(){
     // stylesheet
-    wp_enqueue_style('maisonenjeu', get_stylesheet_directory_uri().'/style.css', array(), "1.3");
+    wp_enqueue_style('maisonenjeu', get_stylesheet_directory_uri().'/style.css', array(), "1.4");
 }
 
 add_action('widgets_init', 'maisonenjeu_sidebars');
